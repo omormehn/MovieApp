@@ -1,41 +1,75 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Tabs } from 'expo-router'
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Iconn from 'react-native-vector-icons/Entypo';
+import TabIcon from '@/compoonents/TabIcon';
+import { View } from 'react-native';
+import { hide } from 'expo-router/build/utils/splash';
 const _Layout = () => {
+
     return (
-        <Tabs>
+        <Tabs
+            screenOptions={{
+                tabBarShowLabel: false,
+                tabBarItemStyle: {
+                    width: '100%',
+                    height: '100%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: 7,
+                    alignContent: 'center'
+                },
+                tabBarStyle: {
+                    backgroundColor: '#0f0d23',
+                    marginBottom: 20,
+                    height: 60,
+                    marginHorizontal: 20,
+                    borderRadius: 30,
+                    overflow: 'hidden',
+                    position: 'absolute',
+                    borderWidth: 1,
+                    borderColor: "#0F0D23"
+                }
+            }}
+        >
             <Tabs.Screen
                 name='index'
                 options={{
-                    tabBarIcon: ({ size, color }) => {
-                        return <Icon name="home" size={size} color={color} />
-                    },
+                    title: 'Home',
+                    tabBarIcon: ({ focused }) => (
+                        <View className=''>
+                            <TabIcon name='Home' iconName='home' focused={focused} />
+
+                        </View>
+                    ),
                     headerShown: false
                 }} />
 
             <Tabs.Screen
-                name='games'
+                name='search'
                 options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Icon name="gamepad" size={size} color={color} />
+                    title: 'Search',
+                    tabBarIcon: ({ focused }) => (
+                        <TabIcon name='Search' iconName='search' focused={focused} />
                     ),
                     headerShown: false
                 }} />
             <Tabs.Screen
                 name='news'
                 options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Iconn name="news" size={size} color={color} />
+                    title: 'News',
+                    tabBarIcon: ({ focused }) => (
+                        <TabIcon name='Save' iconName='bookmark' focused={focused} />
+
                     ),
                     headerShown: false
                 }} />
             <Tabs.Screen
                 name='profile'
                 options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Icon name="user" size={size} color={color} />
+                    title: 'Profile',
+                    tabBarIcon: ({ focused }) => (
+                        <TabIcon name='Profile' iconName='user' focused={focused} />
+
                     ),
                     headerShown: false
                 }} />

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import { Tabs } from 'expo-router'
-import TabIcon from '@/compoonents/TabIcon';
+import TabIcon from '@/components/TabIcon';
 import { View } from 'react-native';
 import { hide } from 'expo-router/build/utils/splash';
 const _Layout = () => {

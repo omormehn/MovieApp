@@ -5,9 +5,11 @@ import { icon } from '@/constants/image'
 interface Props {
     placeholder: string;
     onPress?: () => void;
+    value: string
+    onChangeText: (text: string) => void
 }
 
-const SearchBar = ({onPress, placeholder}: Props) => {
+const SearchBar = ({onPress, placeholder, value, onChangeText }: Props) => {
   return (
     <View 
         style={{flexDirection: 'row', alignItems: 'center'}}
@@ -18,9 +20,9 @@ const SearchBar = ({onPress, placeholder}: Props) => {
 
         <TextInput
             onPress={onPress}
-            value=''
+            value={value}
             placeholder={placeholder}
-            onChangeText={() => {}}
+            onChangeText={onChangeText}
             placeholderTextColor='#a8b5db'
             className='flex-1 mx-2 text-white'
         />

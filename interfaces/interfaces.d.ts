@@ -1,4 +1,5 @@
 interface Movie {
+  original_name: ReactNode;
   id: number;
   title: string;
   adult: boolean;
